@@ -1,12 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.4.10"
+    // 1. Update Kotlin version
+    ext.kotlin_version = "1.8.20"
     repositories {
         google()
-        jcenter()
+        mavenCentral() // Use mavenCentral() instead of jcenter() which is deprecated
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.1'
+        // 2. Update Android Gradle Plugin version
+        classpath 'com.android.tools.build:gradle:8.4.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -17,7 +19,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral() // Also update here
         maven {url "https://jitpack.io"}
     }
 }
